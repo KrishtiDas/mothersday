@@ -8,7 +8,7 @@
 <style>
   body{
     margin:0;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -17,7 +17,9 @@
     overflow:hidden;
   }
 
-  .scene{ perspective:1200px; }
+  .scene{
+    perspective:1200px;
+  }
 
   .card{
     width:320px;
@@ -29,7 +31,9 @@
     z-index:2;
   }
 
-  .card.flipped{ transform:rotateY(180deg); }
+  .card.flipped{
+    transform:rotateY(180deg);
+  }
 
   .side{
     position:absolute;
@@ -55,7 +59,10 @@
 
   h1{ color:#e91e63; margin:10px 0; }
 
-  .flower{ font-size:35px; animation:float 3s infinite; }
+  .flower{
+    font-size:35px;
+    animation:float 3s infinite;
+  }
 
   @keyframes float{
     0%,100%{transform:translateY(0);}
@@ -63,16 +70,16 @@
   }
 
   .photo{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  background:url('images/happy_mothers_day_image_chatgpt.png');
-  background-size:100%;  /*zoom control */
-  background-position:center;
-  background-repeat:no-repeat;
-  margin:10px 0;
-  border:4px solid #ffb6c1;
-}
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:url('images/happy_mothers_day_image_chatgpt.png');
+    background-size:130%;
+    background-position:50% 40%;
+    background-repeat:no-repeat;
+    margin:10px 0;
+    border:4px solid #ffb6c1;
+  }
 
   .heart{
     font-size:30px;
@@ -85,9 +92,13 @@
     100%{transform:scale(1);}
   }
 
-  p{ font-size:14px; line-height:1.5; margin:6px 0; }
+  p{
+    font-size:14px;
+    line-height:1.5;
+    margin:6px 0;
+  }
 
-  /* FLOATING */
+  /* FLOATING ELEMENTS */
   .float-item{
     position:absolute;
     top:-50px;
@@ -101,11 +112,63 @@
     100%{transform:translateY(110vh) rotate(360deg);}
   }
 
+  /* 📱 MOBILE RESPONSIVE */
+  @media screen and (max-width: 600px) {
+
+    body{
+      height:auto;
+      min-height:100vh;
+      padding:20px 10px;
+      overflow:auto;
+    }
+
+    .scene{
+      perspective:800px;
+      width:100%;
+      display:flex;
+      justify-content:center;
+    }
+
+    .card{
+      width:90vw;
+      max-width:320px;
+      height:420px;
+    }
+
+    .side{
+      padding:15px;
+    }
+
+    .photo{
+      width:110px;
+      height:110px;
+      background-size:135%;
+      background-position:50% 35%;
+    }
+
+    h1{ font-size:18px; }
+    h2{ font-size:16px; }
+
+    p{
+      font-size:12px;
+      line-height:1.4;
+    }
+
+    .flower{ font-size:26px; }
+    .heart{ font-size:24px; }
+
+    .float-item{
+      font-size:16px;
+      opacity:0.6;
+    }
+  }
+
 </style>
 </head>
 
 <body>
 
+<!-- FLOATING -->
 <div class="float-item" style="left:5%; animation-duration:9s;">🌺</div>
 <div class="float-item" style="left:85%; animation-duration:10s;">🌸</div>
 <div class="float-item" style="left:15%; animation-duration:6s;">❤️</div>
@@ -121,7 +184,6 @@
 <div class="float-item" style="left:92%; animation-duration:5s;">🌿</div>
 
 <div class="scene">
-
   <div class="card" id="card">
 
     <!-- FRONT -->
@@ -148,11 +210,11 @@
     </div>
 
   </div>
-
 </div>
 
 <script>
 const card=document.getElementById("card");
+
 card.addEventListener("click",()=>{
   card.classList.toggle("flipped");
 });
@@ -170,8 +232,6 @@ window.onload=()=>{
 
   typeWriter(document.getElementById("text2"),
   "You are my strength, my happiness and my safe place 🌷 Every success of mine has your blessing ✨");
-
-
 };
 </script>
 
