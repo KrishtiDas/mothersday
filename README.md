@@ -49,14 +49,22 @@ background-position: 50% 40%;
 rotateY() → flip card effect
 
 @keyframes fall → floating emojis
+
 @keyframes float → flower bounce
+
 @keyframes pulse → heart beat effect
-JavaScript typewriter effect → text reveal animation
+
+JavaScript:
+typewriter effect → text reveal animation
+
 💡 Use Case
 
 Perfect for:
 
 Digital Mother’s Day greetings 💐
+
 Personalized e-cards 💌
+
 Learning CSS 3D transforms + animations
+
 Fun creative frontend projects
