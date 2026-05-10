@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mother's Day Flip Card</title>
+
+<style>
+  body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#ffe6f0,#fff5f7);
+    font-family:Segoe UI;
+    overflow:hidden;
+  }
+
+  .scene{ perspective:1200px; }
+
+  .card{
+    width:320px;
+    height:440px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 1s;
+    cursor:pointer;
+    z-index:2;
+  }
+
+  .card.flipped{ transform:rotateY(180deg); }
+
+  .side{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    text-align:center;
+    background:white;
+  }
+
+  .back{
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    transform:rotateY(180deg);
+    color:#fff;
+  }
+
+  h1{ color:#e91e63; margin:10px 0; }
+
+  .flower{ font-size:35px; animation:float 3s infinite; }
+
+  @keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+  }
+
+  .photo{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:url('images/happy_mothers_day_image_chatgpt.png');
+  background-size:100%;  /*zoom control */
+  background-position:center;
+  background-repeat:no-repeat;
+  margin:10px 0;
+  border:4px solid #ffb6c1;
+}
+
+  .heart{
+    font-size:30px;
+    animation:pulse 1.5s infinite;
+  }
+
+  @keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+  }
+
+  p{ font-size:14px; line-height:1.5; margin:6px 0; }
+
+  /* FLOATING */
+  .float-item{
+    position:absolute;
+    top:-50px;
+    font-size:24px;
+    animation:fall linear infinite;
+    opacity:0.85;
+  }
+
+  @keyframes fall{
+    0%{transform:translateY(-10vh) rotate(0deg);}
+    100%{transform:translateY(110vh) rotate(360deg);}
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="float-item" style="left:5%; animation-duration:9s;">🌺</div>
+<div class="float-item" style="left:85%; animation-duration:10s;">🌸</div>
+<div class="float-item" style="left:15%; animation-duration:6s;">❤️</div>
+<div class="float-item" style="left:45%; animation-duration:5.5s;">✨</div>
+<div class="float-item" style="left:75%; animation-duration:7s;">💖</div>
+<div class="float-item" style="left:30%; animation-duration:5s;">💝</div>
+<div class="float-item" style="left:10%; animation-duration:7.5s;">🌷</div>
+<div class="float-item" style="left:25%; animation-duration:6.5s;">🦋</div>
+<div class="float-item" style="left:40%; animation-duration:8s;">💐</div>
+<div class="float-item" style="left:55%; animation-duration:6s;">🌼</div>
+<div class="float-item" style="left:65%; animation-duration:7s;">💕</div>
+<div class="float-item" style="left:80%; animation-duration:8.5s;">🌻</div>
+<div class="float-item" style="left:92%; animation-duration:5s;">🌿</div>
+
+<div class="scene">
+
+  <div class="card" id="card">
+
+    <!-- FRONT -->
+    <div class="side front">
+      <div class="flower">🌸💐🌸</div>
+      <h1>Happy Mother's Day মা</h1>
+
+      <p id="text1"></p>
+
+      <div class="photo"></div>
+
+      <p>Tap to open 💌</p>
+    </div>
+
+    <!-- BACK -->
+    <div class="side back">
+      <h2>Dear Ma 💖</h2>
+
+      <p id="text2"></p>
+
+      <div class="heart">❤</div>
+
+      <p>Love You Always 💕</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const card=document.getElementById("card");
+card.addEventListener("click",()=>{
+  card.classList.toggle("flipped");
+});
+
+function typeWriter(el,text,i=0){
+  if(i<text.length){
+    el.innerHTML+=text.charAt(i);
+    setTimeout(()=>typeWriter(el,text,i+1),35);
+  }
+}
+
+window.onload=()=>{
+  typeWriter(document.getElementById("text1"),
+  "To the most wonderful mom (মা) in the world, thank you for your endless love and care 💖 You are my everything, Ma 💕");
+
+  typeWriter(document.getElementById("text2"),
+  "You are my strength, my happiness and my safe place 🌷 Every success of mine has your blessing ✨");
+
+
+};
+</script>
+
+</body>
+</html>
