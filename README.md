@@ -1,70 +1,132 @@
-💌 Mother’s Day Flip Card (HTML + CSS + JS)
+# 💖 Mother's Day Interactive Flip Card
 
-This project is a beautifully animated greeting card built using HTML, CSS, and JavaScript. It features a 3D flip card interaction, floating decorative elements, typewriter text animation, and a customizable circular profile image. The design is soft, festive, and ideal for personalized digital greeting cards.
+A beautifully animated and interactive Mother's Day greeting card built using **HTML, CSS, and JavaScript**. The project combines smooth 3D card transitions, typewriter text animations, floating decorative elements, responsive design, and personalized messages to create a memorable digital greeting experience.
 
-✨ Features
+---
 
-🎴 3D flip card animation (front/back view)
+## ✨ Features
 
-🌸 Floating decorative emojis for festive effect
+* 🎴 Multi-card interactive experience
+* 🔄 Smooth 3D flip card animation
+* 🌸 Floating flowers, hearts, and decorative emojis
+* ⌨️ Typewriter text reveal effect
+* 🖼️ Circular profile image with customizable positioning
+* 💖 Animated heart pulse effect
+* 📱 Fully responsive design (Desktop + Mobile)
+* 🖱️ Click-to-flip and card navigation interaction
+* 🎨 Soft pastel aesthetic design
 
-⌨️ Typewriter text animation for personalized message reveal
+---
 
-🖼️ Circular profile image with adjustable zoom and positioning
+## 🧩 Project Structure
 
-💖 Soft pastel gradient background for aesthetic feel
+```text
+mothers_day/
 
-🖱️ Click-to-flip interaction
+├── index.html
+├── style.css
+├── script.js
+└── images/
+    └── happy_mothers_day_image_chatgpt.png
+```
 
-🧩 Core Structure
+### HTML
 
-Front Side: Greeting message + animated photo + prompt
+* Card layout and content structure
+* Decorative floating elements
+* Image container and text placeholders
 
-Back Side: Emotional message + heart animation
+### CSS
 
-JavaScript: Handles flip interaction + typewriter effect
+* 3D card flip animation
+* Floating emoji effects
+* Heart pulse animation
+* Responsive layout
+* Typography and visual styling
 
-CSS: Manages animations, layout, and visual styling
+### JavaScript
 
-🖼️ Profile Photo Customization
+* Card navigation logic
+* Flip interaction handling
+* Typewriter text animation
+* Dynamic content reveal
 
-The .photo class uses a background image instead of <img> for better control.
+---
 
-🎯 Key controls:
+## 🎨 Animations Used
 
-background-size → controls zoom level
+### CSS Animations
 
-background-position → adjusts focus area
+* `rotateY()` → 3D card flip effect
+* `@keyframes fall` → floating decorative elements
+* `@keyframes float` → gentle flower movement
+* `@keyframes pulse` → heartbeat animation
 
-border-radius: 50% → makes it circular
+### JavaScript Animations
+
+* Typewriter effect
+* Sequential message reveal
+* Interactive card transitions
+
+---
+
+## 🖼️ Profile Image Customization
+
+The profile image is displayed using a CSS background image for greater flexibility.
 
 Example:
 
-background-size: 125%;
+```css
+.photo{
+    background-image: url("images/happy_mothers_day_image_chatgpt.png");
+    background-size: 125%;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+}
+```
 
-background-position: 50% 40%;
+### Useful Controls
 
-🎨 Animations Used
+| Property            | Purpose                   |
+| ------------------- | ------------------------- |
+| background-size     | Controls image zoom       |
+| background-position | Adjusts image focus       |
+| border-radius: 50%  | Creates circular image    |
+| background-repeat   | Prevents image repetition |
 
-rotateY() → flip card effect
+---
 
-@keyframes fall → floating emojis
+## 🚀 How to Run
 
-@keyframes float → flower bounce
+1. Download or clone the repository.
+2. Keep all files in their respective folders.
+3. Open `index.html` in any modern web browser.
+4. Click on the card to flip and explore the messages.
 
-@keyframes pulse → heart beat effect
+---
 
-JavaScript:
-typewriter effect → text reveal animation
-
-💡 Use Case
+## 💡 Use Cases
 
 Perfect for:
 
-Digital Mother’s Day greetings 💐
+* 💐 Mother's Day greetings
+* 💌 Personalized digital greeting cards
+* 🎁 Handmade digital gifts
+* 📚 Learning CSS animations and transforms
+* 🧑‍💻 Frontend practice projects
 
-Personalized e-cards 💌
+---
 
-Learning CSS 3D transforms + animations
+## 🛠️ Technologies Used
 
-Fun creative frontend projects
+* HTML5
+* CSS3
+* JavaScript (Vanilla JS)
+
+---
+
+## ❤️ Author
+
+Made with love by **Krishti**
+
+This project was created as a small token of love, gratitude, and appreciation for my mother.
