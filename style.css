@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe6f0, #fff5f7);
+    font-family: "Segoe UI", sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* FLOATING EMOJIS */
+
+.float-item {
+    position: absolute;
+    top: -60px;
+    font-size: 24px;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* CARD CONTAINER */
+
+.scene {
+    perspective: 1200px;
+    width: 320px;
+    height: 450px;
+    position: relative;
+}
+
+/* CARD */
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.hide {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* CARD SIDES */
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* FRONT */
+
+.front {
+    background: #ffffff;
+}
+
+.front h1 {
+    color: #e91e63;
+    margin: 12px 0;
+    font-size: 28px;
+}
+
+/* BACK */
+
+.back {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.back h2 {
+    margin-bottom: 15px;
+}
+
+/* LAST CARD */
+
+.poem {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: white;
+}
+
+.poem h2 {
+    margin-bottom: 18px;
+}
+
+/* PHOTO */
+
+.photo {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    margin: 15px 0;
+
+    background-image: url("images/happy_mothers_day_image_chatgpt.png");
+    background-size: 130%;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+
+    border: 4px solid #ffb6c1;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* FLOWER */
+
+.flower {
+    font-size: 36px;
+    animation: floatFlower 3s ease-in-out infinite;
+}
+
+@keyframes floatFlower {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* HEART */
+
+.heart {
+    font-size: 32px;
+    margin-top: 15px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* TEXT */
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tap {
+    margin-top: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+/* TYPEWRITER CURSOR */
+
+.typing::after {
+    content: "|";
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+.copyright {
+    position: fixed;
+    bottom: 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .scene {
+        width: 90vw;
+        max-width: 330px;
+        height: 430px;
+    }
+
+    .photo {
+        width: 115px;
+        height: 115px;
+    }
+
+    .front h1 {
+        font-size: 22px;
+    }
+
+    .back h2,
+    .poem h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .flower {
+        font-size: 28px;
+    }
+
+    .heart {
+        font-size: 28px;
+    }
+
+    .music-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+    .float-item {
+        font-size: 18px;
+        opacity: 0.65;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+}
